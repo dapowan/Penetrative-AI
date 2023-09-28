@@ -1,8 +1,8 @@
 # Penetrative-AI
-
+Try to sense the user's activities and identify human heartbeats with ChatGPT! ChatGPT-4 is recommended.
 ## Activity Sensing
 
-Try to sense the user's activities with ChatGPT! Follow the three steps:
+Follow the three steps:
 
 1. Copy the following prompt.
 ```
@@ -49,8 +49,20 @@ Sensor data:
 Reasoning:
 Summary:
 ```
-2. Replace `$DATA_STEP$`, `$DATA_SATELLITE_COUNT$`, `$DATA_SATELLITE_SNR$`,`$DATA_WIFI_COUNT$`, and `$DATA_WIFI_LIST$` with your sensor data.
-3. Chat with ChatGPT.
+2. Replace `$DATA_STEP$`, `$DATA_SATELLITE_COUNT$`, `$DATA_SATELLITE_SNR$`,`$DATA_WIFI_COUNT$`, and `$DATA_WIFI_LIST$` with your sensor data. Here are some examples you may try:
+```
+Sensor data:
+1. Step count: 115.0/min.
+2. Satellites detected: 2. Carrier-to-noise: 17.9dB.
+3. Total WiFi APs scanned: 21. SSID list: ['SINGTEL-UU9A(5G)', 'eduroam', 'NTUSECURE', 'NTUGUEST', 'NTUGUEST', 'OCBCAPPS', 'OCBC Free WiFi Zone', 'SINGTEL-D7B6', 'YilinLikesTea', 'eduroam', 'NTUGUEST', 'NTUSECURE', 'NTUSECURE', 'Redmi Note 9', 'Phoenix', 'OCBC Free WiFi Zone', 'eduroam', 'HAP_F04482485', 'OCBCAPPS', 'PAIKSBIBIM NTU_EXT', 'MNMP'].
+```
+```
+Sensor data:
+1. Step count: 109.0/min.
+2. Satellites detected: 0. Carrier-to-noise: 0.0dB.
+3. Total WiFi APs scanned: 8. SSID list: ["Claudio's Galaxy S23", 'mkphone1', 'GlobalWiFi_0RORFC', 'Wireless@SGx', 'Galaxy S9f3b7', 'Wireless@SGx', 'GlobalWiFi_0QU8XG', 'Wireless@SGx'].
+```
+4. Chat with ChatGPT.
 
 ## Heartbeat Detection
 1. Copy the following prompt.
@@ -93,5 +105,14 @@ R-peaks: [1120, 1117, 1111, 1065, 1127, 1139]
 Please identify the R-peaks in the provided ECG data. Do not write codes.
 ECG data: $DATA$
 ```
-2. Replace `$DATA$` with your ECG data.
-3. Chat with ChatGPT.
+2. Replace `$DATA$` with your ECG data. Here are some examples you may try:
+```
+[945 959 964 961 960 961 954 956 953 957 952 975 970 980 945 963 923 994 1059 915 960 931 953 935 953 938 945 930 953 960 976 966 973 963 972 961 972 961 974 970 995 982 995 953 986 921 1109 1028 931 977 947 970 955 967 957 965 953 972 977 986 976 983 971 975 966 972 964 973 968 991 981 992 955 976 937 985 1078 929 964 945 958 947 958 951 956 950 954 961 975 967 971 966 966 961 961 955 961 954 967 973 977 967 955 944 953 919 1076 959 929 943 935 938 934 939 934 934 923 932 948 955 950 953 948 948 944 947 941 947 943 953 960 965 953 946 936 939 905 1078 960 926 943 935 941 939 945 940 936 931 948 962 963 964 962 961 959 959 956 959 957 963 975 982 976 963 951 955 915 1129 986 935 954 944 953 949 955 950 952 950 963 973]
+```
+The ground-truth R-peaks are `[1059, 1109, 1078, 1076, 1078, 1129]`
+```
+[975 952 976 960 985 984 1023 1019 1026 991 997 980 990 979 994 983 994 983 994 980 999 983 998 985 1010 1005 1017 974 1002 946 1180 1108 968 978 962 971 964 971 976 994 1016 1033 1022 993 980 973 979 977 985 981 982 979 984 977 983 976 985 978 994 997 1019 982 995 950 1068 1192 979 985 957 976 958 974 967 989 1001 1032 1029 1017 989 992 983 989 983 994 987 995 986 995 986 994 985 999 992 1020 1018 1025 987 1015 962 1151 1141 976 1005 976 994 978 990 983 1006 1013 1042 1041 1035 1008 1005 994 998 992 999 993 997 986 993 983 989 983 990 985 1006 1003 993 966 978 950 1186 1065 950 956 940 948 939 944 945 959 973 995 1005 994 966 955 946 947 947 950 951 950 949 948 946 945 945 942 943 943 952 962 968 942 944 920 973 1169 967 933 915 926 914 923 916 931]
+```
+The ground-truth R-peaks are `[1180, 1192, 1151, 1186, 1169]`
+
+4. Chat with ChatGPT.
