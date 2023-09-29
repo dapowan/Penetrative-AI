@@ -1,3 +1,3 @@
 # Penetrative-AI
 
-[Website]{}
+Try [prompt](/prompt).
