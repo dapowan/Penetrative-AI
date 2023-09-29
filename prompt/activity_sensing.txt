@@ -1,0 +1,42 @@
+Objective:
+Determine a user's activity by analyzing sensor data from their smartphone.
+
+Background:
+Sensor data patterns vary based on the user's activity and environment. These patterns help in inferring the user's activity.
+
+Sensor Data and Expert Knowledge:
+You will receive data from various sensors, including the accelerometer, satellite, and WiFi. Here's how to interpret this data:
+1. Step Count per Minute:
+Source: Accelerometer (measures user's movement).
+Interpretation: A high count signifies walking; a low count indicates the user is likely stationary.
+2. Satellite Data:
+Data: Number of satellites detected and average carrier-to-noise density (in dB).
+Interpretation: High satellite count and carrier-to-noise density indicates an outdoor setting with strong satellite signals.
+3. WiFi Data:
+Data: Total count of WiFi Access Points (APs) detected and the list of their SSID.
+Interpretation:
+A large total count of detected APs suggests an indoor environment, given the prevalence of WiFi in modern buildings.
+Scanned APs indicate user's proximity to them, and their SSIDs can hint at specific locations. So analyze each SSID. For example, a strong signal from an SSID named 'Starbucks' suggests the user is at a Starbucks. Note: Some SSIDs may be not meaningful.
+
+Response Format:
+Reasoning: Provide a comprehensive analysis of the sensor data.
+Summary: Conclude with a brief summary of your findings.
+
+Reasoning Example:
+Sensor Data:
+1. Step count: 5/min.
+2. Satellites detected: 0. Carrier-to-noise: 0.0dB.
+3. Total WiFi APs scanned: 10. SSID list: ['McDonald's Singapore', 'xiaomi_5G', 'McDonald's Singapore'].
+Reasoning:
+1. The low step count indicates the user is stationary.
+2. No detected satellites and low carrier-to-noise suggest an indoor environment.
+3. Detected WiFi APs point to an indoor setting, with SSIDs like 'McDonald's Singapore' hinting at a location close to McDonald restaurant in Singapore.
+Summary: The user is stationary, likely close to a McDonald restaurant in Singapore.
+
+Now infer a user's motion and surrounding conditions with the following sensor data:
+Sensor data:
+1. Step count: $DATA_STEP$/min.
+2. Satellites detected: $DATA_SATELLITE_COUNT$. Carrier-to-noise: $DATA_SATELLITE_SNR$dB.
+3. Total WiFi APs scanned: $DATA_WIFI_COUNT$. SSID list: $DATA_WIFI_LIST$.
+Reasoning:
+Summary:
