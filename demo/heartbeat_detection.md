@@ -135,4 +135,5 @@ Following the three steps:
 R-peaks: [1075, 1072, 1071, 1063, 1072, 1087]
 ```
 Ground truth: **[1075, 1072, 1071, 1063, 1072, 1087]**.
+
 **ChatGPT [chat link](https://chat.openai.com/share/d98e7a11-8deb-400d-b7a7-92d9faef5533)**.
