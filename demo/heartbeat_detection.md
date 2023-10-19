@@ -68,9 +68,9 @@ R-peaks: [1059, 1109, 1078, 1076, 1078, 1129]
 Response:
 R-peaks: [1059, 1109, 1078, 1076, 1078, 1129]
 ```
-Ground truth: [1059, 1109, 1078, 1076, 1078, 1129].
+Ground truth: **[1059, 1109, 1078, 1076, 1078, 1129]**.
 
-ChatGPT [chat link](https://chat.openai.com/share/c8559dc2-d821-42d3-acd0-9cdf4b4bfd1e).
+**ChatGPT [chat link](https://chat.openai.com/share/c8559dc2-d821-42d3-acd0-9cdf4b4bfd1e)**.
 
 ## Example-2
 
@@ -134,5 +134,5 @@ Following the three steps:
 
 R-peaks: [1075, 1072, 1071, 1063, 1072, 1087]
 ```
-Ground truth: [1075, 1072, 1071, 1063, 1072, 1087].
-ChatGPT [chat link](https://chat.openai.com/share/d98e7a11-8deb-400d-b7a7-92d9faef5533).
+Ground truth: **[1075, 1072, 1071, 1063, 1072, 1087]**.
+**ChatGPT [chat link](https://chat.openai.com/share/d98e7a11-8deb-400d-b7a7-92d9faef5533)**.

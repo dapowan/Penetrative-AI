@@ -82,7 +82,7 @@ Summary: The user is walking indoors, likely in a commercial or urban setting in
 Motion: walking.
 Environment: indoors.
 ```
-ChatGPT [chat link](https://chat.openai.com/share/b2947ce7-ed1f-4e77-8ff5-1ce0cf6afb88).
+**ChatGPT [chat link](https://chat.openai.com/share/b2947ce7-ed1f-4e77-8ff5-1ce0cf6afb88)**.
 
 ## Example-2
 ![Shopping mall in Hong kong!](img/as_e2.jpg)
@@ -161,5 +161,5 @@ The user is walking in an indoor environment, likely within a shopping center or
 Motion: walking.
 Environment: indoors.
 ```
-ChatGPT [chat link](https://chat.openai.com/share/4cbd359d-6017-4156-8013-5e04c0513c1e).
+**ChatGPT [chat link](https://chat.openai.com/share/4cbd359d-6017-4156-8013-5e04c0513c1e)**.
 
