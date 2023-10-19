@@ -68,4 +68,71 @@ R-peaks: [1059, 1109, 1078, 1076, 1078, 1129]
 Response:
 R-peaks: [1059, 1109, 1078, 1076, 1078, 1129]
 ```
+Ground truth: [1059, 1109, 1078, 1076, 1078, 1129].
+
 ChatGPT [chat link](https://chat.openai.com/share/c8559dc2-d821-42d3-acd0-9cdf4b4bfd1e).
+
+## Example-2
+
+### Sensor Data:
+```
+ECG data: [956 943 959 951 1031 1075 1039 1036 931 932 934 941 947 949 953 967 985 991 984 973 970 965 968 965 964 960 963 958 960 953 963 951 967 944 1051 1072 1037 947 895 946 920 931 918 925 925 948 962 972 961 958 955 957 953 952 950 946 947 943 947 941 954 936 1008 1071 1031 980 903 952 925 934 914 920 916 945 961 978 961 962 952 962 949 956 947 954 940 954 939 956 937 960 934 1038 1063 1033 946 895 942 946 949 935 934 941 968 988 993 975 973 967 971 965 967 961 964 958 962 954 964 953 968 944 1044 1072 1039 968 902 947 931 945 939 944 925 938 952 978 976 974 964 966 960 963 957 961 955 958 954 958 954 956 956 958 972 1087 1046 1040 939 937 948 949 948 946 944 961 960 974 978 980 968 972 967 967 960 965 955 964 955 965 955 966 954 974]
+```
+### Full Prompt
+```
+Objective:
+Find the R-peaks in an ECG waveform.
+
+Background Knowledge:
+An R-peak within a sequence of ECG numbers refers to a pronounced upward deflection, typically representing the largest and most conspicuous values within the sequence. To identify R-peaks, follow these steps:
+
+1. Initial Observation: Begin by observing the rough overall range of ECG numbers in the provided data.
+
+2. Identify Subsequences: Find subsequences of numbers that meet the following criteria:
+2.1. The initial numbers are in the lower part of the overall range, even smaller than the range.
+2.2. Subsequent numbers exhibit a significant increase, even exceeding the overall range.
+2.3. Following the increase, subsequent numbers return to the overall range.
+
+3. Select R-Peaks: After identifying these subsequences, select the largest number from each subsequence as an R-peak.
+
+Response Format:
+Your response should strictly adhere to the format detailed below:
+Reasoning: Provide a reasoned explanation based on the information mentioned above about how the S-peaks were identified.
+R-peaks: List the identified R-peaks numbers. List each instance separately, even if the same number appears multiple times, e.g., [R1, R2, R1] (each instance separately)
+
+Reasoning Example:
+ECG data: [944, 924, 941, 922, 933, 925, 955, 960, 974, 961, 967, 956, 966, 954, 967, 957, 971, 974, 988, 976, 976, 948, 968, 927, 1120, 975, 938, 949, 942, 942, 942, 941, 940, 939, 943, 945, 967, 968, 971, 965, 966, 958, 962, 953, 963, 957, 969, 974, 989, 974, 971, 949, 972, 918, 1117, 1005, 930, 960, 940, 953, 943, 950, 947, 947, 946, 956, 968, 975, 973, 972, 971, 966, 965, 964, 966, 966, 974, 985, 988, 978, 964, 958, 961, 940, 1111, 962, 945, 952, 948, 948, 948, 948, 949, 944, 945, 951, 969, 970, 973, 965, 970, 959, 966, 959, 966, 965, 988, 974, 986, 946, 980, 918, 1043, 1065, 914, 969, 934, 958, 936, 955, 940, 953, 934, 954, 969, 984, 978, 984, 975, 979, 970, 979, 973, 980, 985, 1001, 990, 983, 966, 979, 942, 1127, 992, 948, 966, 955, 963, 954, 959, 956, 956, 953, 975, 980, 988, 978, 984, 971, 976, 968, 978, 975, 999, 985, 1002, 960, 987, 931, 1043, 1139, 922, 977, 940, 966, 944, 964, 947, 959, 944, 960]
+Reasoning:
+Following the three steps by:
+1. Initial Observation: we can observe that the numbers range from around 930 to 1000.
+2. Identify Subsequences: we can identify several subsequences that start with numbers in the lower part of the range, significantly increase to exceed the range, and then return to the range:
+- [927, 1120, 975, 938]
+- [918, 1117, 1005, 930, 960]
+- [940, 1111, 962, 945]
+- [918, 1043, 1065, 914, 969]
+- [942, 1127, 992, 948]
+- [931, 1043, 1139, 922, 977]
+3. Select R-Peaks: The R-peaks are [1120, 1117, 1111, 1065, 1127, 1139]
+R-peaks: [1120, 1117, 1111, 1065, 1127, 1139]
+
+Please identify the R-peaks in the provided ECG data. Do not write codes.
+ECG data: [956 943 959 951 1031 1075 1039 1036 931 932 934 941 947 949 953 967 985 991 984 973 970 965 968 965 964 960 963 958 960 953 963 951 967 944 1051 1072 1037 947 895 946 920 931 918 925 925 948 962 972 961 958 955 957 953 952 950 946 947 943 947 941 954 936 1008 1071 1031 980 903 952 925 934 914 920 916 945 961 978 961 962 952 962 949 956 947 954 940 954 939 956 937 960 934 1038 1063 1033 946 895 942 946 949 935 934 941 968 988 993 975 973 967 971 965 967 961 964 958 962 954 964 953 968 944 1044 1072 1039 968 902 947 931 945 939 944 925 938 952 978 976 974 964 966 960 963 957 961 955 958 954 958 954 956 956 958 972 1087 1046 1040 939 937 948 949 948 946 944 961 960 974 978 980 968 972 967 967 960 965 955 964 955 965 955 966 954 974]
+```
+### Response from ChatGPT-4
+```
+Reasoning:
+Following the three steps:
+1. Initial Observation: We observe that the numbers are mostly in the range of 900 to 1000.
+2. Identify Subsequences: Several subsequences are identified that start with numbers in the lower part of the range, significantly increase, and then return to the range:
+[951, 1031, 1075, 1039, 1036, 931]
+[944, 1051, 1072, 1037, 947, 895]
+[936, 1008, 1071, 1031, 980, 903]
+[934, 1038, 1063, 1033, 946, 895]
+[944, 1044, 1072, 1039, 968, 902]
+[956, 958, 972, 1087, 1046, 1040, 939]
+3. Select R-Peaks: The selected R-peaks from the subsequences are [1075, 1072, 1071, 1063, 1072, 1087].
+
+R-peaks: [1075, 1072, 1071, 1063, 1072, 1087]
+```
+Ground truth: [1075, 1072, 1071, 1063, 1072, 1087].
+ChatGPT [chat link](https://chat.openai.com/share/d98e7a11-8deb-400d-b7a7-92d9faef5533).
